@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/index.css">
+  <link rel="icon" type="image/png" href="images/icons/favicon.png">
+  <title>Digital Electronics</title>
+</head>
+
+<body onload="retrive()">
+  <div class="heading" id="headings">
+    <div class="heading_item">
+      <div>
+        <img src="images/icons/favicon.png" id="heading_logo" alt="nopic">
+        <h2 id="heading_title">Digitalpedia</h2>
+      </div>
+      <div class="search_heading"><input type="text" list="searches" name="text" id="heading_search"
+          placeholder="Search...." autocomplete="off" autofocus></a>
+        <datalist id="searches">
+          <option value="Digital"></option>
+          <option value="Electronics"></option>
+          <option value="Analog"></option>
+          <option value="Logic Gates"></option>
+          <option value="Karnaugh"></option>
+        </datalist>
+      </div>
+    </div>
+    <div class="nav_items">
+      <a class="tooltip"><img src="images/icons/home-solid.svg" alt="nopic" class="heading_icons">
+        <span class="tooltiptext">Home</span>
+      </a>
+      <a href="blog.html" class="tooltip"><img src="images/icons/blog-solid.svg" alt="nopic" class="heading_icons"> <span
+          class="tooltiptext">Blog</span></a>
+
+      <a class='tooltip' id="LogIn_iconOn" onclick="logInOn()"><img src="images/icons/user-circle-solid.svg" alt="nopic"
+          class="heading_icons"><span class="tooltiptext">Pro<wbr>file</span></a>
+
+
+    </div>
+
+
+    <!-- Responsive Nav Bar and cross bar -->
+    <div class="nav_bar">
+      <button style="background-color:transparent; border: none; outline: none;" onclick="bar_clickOn()"><img
+          src="images/icons/bars-solid.svg" alt="nopic" class="heading_icons" id="menu_icon"></button>
+      <button style="background-color:transparent; border: none; outline: none;" onclick="bar_clickOff()"><img
+          src="images/icons/times-solid.svg" alt="nopic" class="heading_icons" id="cross_icon"></button>
+    </div>
+  </div>
+  
+
+  <!-- Sign In and Log In -->
+  <div class="login_items" id="login_item">
+
+
+    <!-- Hidden Choose Character for profile -->
+<div id="hidden_profile_character">
+<div class="inside_profile_character">
+  
+  
+  <div class="profile_characters" >
+    <img src="" alt="nopic" id="current_img" class="inside_character"  onclick="character(this)"/>
+    <p>Current</p>
+  </div>
+  <div class="profile_characters" >
+    <img src="images/character/user-slash-solid.svg" alt="nopic" id="defaultimage" class="inside_character"  onclick="character(this)" /><p>Default</p>
+  </div>
+  <div class="profile_characters" >
+    <img src="images/character/men.png" alt="nopic" class="inside_character"  onclick="character(this)" /><p>Male</p>
+  </div>
+  <div class="profile_characters" >
+    <img src="images/character/female.png" alt="nopic" class="inside_character"  onclick="character(this)" /><p>Female</p>
+  </div>
+  <div class="profile_characters" >
+    <img src="images/character/logan-x-men.svg" alt="nopic" class="inside_character"  onclick="character(this)" /><p>Logan</p>
+  </div>
+  <div class="profile_characters" >
+    <img src="images/character/theater-masks-solid.svg" alt="nopic" class="inside_character"  onclick="character(this)" /><p>Mask</p>
+  </div>
+  <div class="profile_characters" >
+    <img src="images/character/mailchimp-brands.svg" alt="nopic" class="inside_character"  onclick="character(this)" /><p>Chimp</p>
+  </div>
+  <div class="profile_characters" >
+    <img src="images/character/spider-solid.svg" alt="nopic" class="inside_character"  onclick="character(this)" /><p>Spider</p>
+  </div>
+  <div class="profile_characters" >
+    <img src="images/character/frog-solid.svg" alt="nopic" class="inside_character"  onclick="character(this)" /><p>Frog</p>
+  </div>
+
+  <div class="profile_characters" >
+    <img src="images/character/dove-solid.svg" alt="nopic" class="inside_character"  onclick="character(this)" /><p>Dove</p>
+  </div>
+  <div class="profile_characters" >
+    <img src="images/character/paw-solid.svg" alt="nopic" class="inside_character"  onclick="character(this)" /><p>Paw</p>
+  </div>
+  <div class="profile_characters"  id="profile_character_hidden912">
+    <img src="images/character/cat-solid.svg" alt="nopic" class="inside_character"  onclick="character(this)" /><p>Cat</p>
+  </div>
+  <div class="profile_characters"  id="profile_character_hidden912">
+    <img src="images/character/kiwi-bird-solid.svg" alt="nopic" class="inside_character"  onclick="character(this)" /><p>Kiwi</p>
+  </div>
+  <div class="profile_characters"  id="profile_character_hidden912">
+    <img src="images/character/otter-solid.svg" alt="nopic" class="inside_character"  onclick="character(this)" /><p>Otter</p>
+  </div>
+  <div class="profile_characters"  id="profile_character_hidden912">
+    <img src="images/character/feather-alt-solid.svg" alt="nopic" class="inside_character"  onclick="character(this)" /><p>Feather</p>
+  </div>
+  <div class="profile_characters"  id="profile_character_hidden912 hidden575">
+    <img src="images/character/dragon-solid.svg" alt="nopic" class="inside_character"  onclick="character(this)" /><p>Dragon</p>
+  </div>
+  <div class="profile_characters"  id="profile_character_hidden912 hidden575">
+    <img src="images/character/headphones-alt-solid.svg" alt="nopic" class="inside_character"  onclick="character(this)" /><p>HeadPhone</p>
+  </div>
+  <div class="profile_characters"  id="profile_character_hidden912 hidden575">
+    <img src="images/character/heartbeat-solid.svg" alt="nopic" class="inside_character"  onclick="character(this)" /><p>HeartBeat</p>
+  </div>
+  <div class="profile_characters"  id="profile_character_hidden912 hidden575">
+    <img src="images/character/laugh-solid.svg" alt="nopic" class="inside_character"  onclick="character(this)" /><p>Laugh</p>
+  </div>
+</div>
+</div>
+
+
+    <div class="inner_login_items" >
+      <a onclick="logInOff()" id="logIn_iconOff"><img src="images/icons/times-solid.svg" alt="nopic"
+          class="heading_icons"></a>
+          
+            
+          <div class="profile_container">
+
+            <!-- Hidden Profiles -->
+
+            <!-- Hidden Choose account profile -->
+              <div class="hidden_profile_container" id="saved_account_container">
+                <h3>Saved Account:</h3>
+                
+                <div class="saved_account" id="saved_account1">
+                  <span class="saved_account_inside"  id="saved_account_inside1" onclick="chooseaccount(this)">
+                    <img src="" alt="no pic" class="saved_acc_img" id="saved_acc_img1" />
+                    <h3 id="saved_acc_name1"></h3>
+                  </span>
+                  <img src="images/icons/trash-alt-regular.svg" class="trash_icon" onclick="deleteaccount(this)" />
+                </div>
+                <div class="saved_account" id="saved_account2">
+                  <span class="saved_account_inside"   id="saved_account_inside2" onclick="chooseaccount(this)">
+                    <img src="" alt="no pic" class="saved_acc_img"  id="saved_acc_img2" />
+                    <h3 id="saved_acc_name2"></h3>
+                  </span>
+                  <img src="images/icons/trash-alt-regular.svg" class="trash_icon" onclick="deleteaccount(this)" />
+                </div>
+                <div class="saved_account" id="saved_account3">
+                  <span class="saved_account_inside"   id="saved_account_inside3"  onclick="chooseaccount(this)">
+                    <img src="" alt="no pic" class="saved_acc_img"  id="saved_acc_img3" />
+                    <h3 id="saved_acc_name3"></h3>
+                  </span>
+                  <img src="images/icons/trash-alt-regular.svg" class="trash_icon" onclick="deleteaccount(this)" />
+                </div>
+                <div class="saved_account" id="saved_account4">
+                  <span class="saved_account_inside"   id="saved_account_inside4"  onclick="chooseaccount(this)">
+                    <img src="" alt="no pic" class="saved_acc_img"  id="saved_acc_img4" />
+                    <h3 id="saved_acc_name4"></h3>
+                  </span>
+                  <img src="images/icons/trash-alt-regular.svg" class="trash_icon" onclick="deleteaccount(this)" />
+                </div>
+                <div class="saved_account" id="saved_account5">
+                  <span class="saved_account_inside"   id="saved_account_inside5"  onclick="chooseaccount(this)">
+                    <img src="" alt="no pic" class="saved_acc_img"  id="saved_acc_img5" />
+                    <h3 id="saved_acc_name5"></h3>
+                  </span>
+                  <img src="images/icons/trash-alt-regular.svg" class="trash_icon" onclick="deleteaccount(this)" />
+                </div>
+                
+                
+
+              </div>
+
+
+
+                <!-- Hidden Editable Profile -->
+              <div class="hidden_profile_container" id="hidden_editable_container">
+                <form name="formtoedit">
+
+                  <div id="user_image_edit_container">
+                    <a onclick="choose_img()"><img name="user_image_edit" src="" id="user_image_edit"/>
+                    <p>select</p>
+                    </a>
+                  </div><br>
+                  Name:<input type="text" name="user_name_edit" class="userprofile" id="user_name_edit" maxlength="25" required><br>
+                  Age:<input type="Number" name="user_age_edit" class="userprofile" maxlength="3" required>
+                  <br>
+                  <span style="float:left; clear:right;"><p>Password: </p></span>
+                  <div class="passwordandvisibility">
+                     <input type="password" name="user_password_edit" style="font-size: 15px;" class="user_password_edit" id="user_password_edit" maxlength=25 placeholder="Input New Password">
+                    <img src="images/icons/eye-regular.svg" alt="" id="visibleicon" onclick=visiblepassword(this);>
+                  </div>
+                  Address:<input type="text" class="userprofile" name="user_address_edit" style="font-size: 15px;" class="hidden_profiles2" id="user_address_edit" maxlength="50" placeholder="fb|insta|git (optional)"><br>
+                  Bio:<textarea name="user_bio_edit" style="width:80%; height:40px;" maxlength="300" class="user_bio_edit"></textarea>
+                </form>
+
+                <p id="informationinvalid" style=" color:rgb(182, 11, 11); padding:10px;">(Name should not contain Numbers, Age should be atleast 10 and no blank space)</p>
+                <button class="profilebtn" id="savebtn" onclick="saveedit()" >Save</button>
+                <button class="profilebtn" id="savebtn" onclick="canceledit()" >Cancel</button>
+               
+              </div>
+
+
+              <!-- Actual Profile -->
+              <div class="profile" id="profile_container">
+                <div class="profile_image">
+                  <img src="" alt="nopic" id="actual_image">
+                </div>
+                <h2><a href="" target="_new" id="user_name"></a></h2>
+                <p><span class="ageanddes">Age:</span><span id="user_age"></span> </p>
+                <p class="des"><span class="ageanddes">Bio:</span><span id="user_bio" ></span></p>
+                <button class="profilebtn" id="contentEdit" onclick="contentEdit()">Edit</button>
+                <button class="profilebtn" onclick="profile_signount()">Sign Out</button>
+              </div>
+
+
+              <div class="loginsignin">
+                <div class="login" id="login">
+                  <h3>Log In:</h3>
+                  <span style="display:flex; ">
+                    <input type="text" name="Name" id="LogIn_Name" placeholder="Name or email" />
+                    <div class="passwordandvisibility2">
+                      <input type="password" name="" id="LogIn_Password" placeholder="Password" />
+                      <img src="images/icons/eye-regular.svg" alt="" id="visibleicon" onclick=visiblepassword2(this);>
+  
+                    </div>
+                    <button class="login_btn" onclick="login_button()">LogIn</button>
+                  </span>
+                </div>
+                
+                  
+                <div class="signin" id="signin">
+               <h3>Sign in:  <i>(dosen't work)</i></h3>
+
+                <button class="signinwith signingoogle signinhover"><img src="images/icons/google-brands.svg" alt="nopic" class="brand_icon"><p>Sign In with Google </p></button>
+                <button class="signinwith signinfacebook signinhover"><img src="images/icons/facebook-brands.svg" alt="nopic" class="brand_icon"/><p>Sign In with Facebook</p></button>
+                <button class="signinwith signintwitter signinhover"><img src="images/icons/twitter-brands.svg" alt="nopic" class="brand_icon"/><p>Sign In with Twitter</p></button>
+                <button class="signinwith signingithub signinhover"><img src="images/icons/github-brands.svg" alt="nopic" class="brand_icon"/><p>Sign In with Github</p></button>
+             </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+
+
+
+  <!-- Hidden Nav Item For Responsive mobile -->
+  <div class="bar_nav_items" id="bar_nav_item">
+    <div class="inner_bar_nav_items">
+      <a class="nav_bar_hover_icon"><img src="images/icons/home-solid.svg" alt="nopic" class="heading_icons">
+        <p>Home</p>
+      </a>
+      <a class="nav_bar_hover_icon" href="blog.html"><img src="images/icons/blog-solid.svg" alt="nopic" class="heading_icons">
+        <p>Blog</p>
+      </a>
+      <a class="nav_bar_hover_icon" href="#" onclick="hiddenlogInOn()"><img src="images/icons/user-circle-solid.svg"
+          alt="nopic" class="heading_icons">
+        <p>LogIn</p>
+      </a>
+
+    </div>
+  </div>
+
+
+  <!-- Clips -->
+  <div id="popular_clips">
+    <h2 style="margin:10px 0;">Popular Lessons:</h2>
+    <div id="slider">
+      <div id="slider_inside">
+
+        <div class="slide_info ">
+          <div class="slide_content">
+            <h4><a href="#" class="slidemain_topic"> Number Systems, Operations and
+                Codes</a> > Hamming Codes and Error Detection.</h4>
+            <p class="hiddenslide_title slide_paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              velit corporis tempora iste minus beatae ullam, eligendi quam accusantium! Ipsum delectus cumque velit</p>
+            <a href="#" class="slide_learnbutton">Learn</a>
+          </div>
+          <img src="images/diagram/hamming.jpg">
+        </div>
+
+        <div class="slide_info">
+          <div class="slide_content ">
+            <h4><a href="#" class="slidemain_topic">Combinational Circuits</a> > Binary Parallel Adder and Subtractor
+            </h4>
+            <p class="hiddenslide_title slide_paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              velit corporis tempora iste minus beatae ullam, eligendi quam accusantium! Ipsum delectus cumque velit.
+            </p>
+            <a href="#" class="slide_learnbutton">Learn</a>
+          </div>
+          <img src="images/diagram/bpas.png">
+        </div>
+        <div class="slide_info">
+          <div class="slide_content">
+            <h4><a href="#" class="slidemain_topic">Counters</a> > Up/Down
+              Counter.</h4>
+            <p class="hiddenslide_title slide_paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              velit corporis tempora iste minus beatae ullam, eligendi quam accusantium! Ipsum delectus cumque velit.
+            </p>
+            <a href="#" class="slide_learnbutton">Learn</a>
+          </div>
+          <img src="images/diagram/uodown.jpg">
+        </div>
+        <div class="slide_info">
+          <div class="slide_content">
+            <h4><a href="#" class="slidemain_topic">Shift Registers</a> >
+              Bi-directional Shift Registers</h4>
+            <p class="hiddenslide_title slide_paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              velit corporis tempora iste minus beatae ullam, eligendi quam accusantium! Ipsum delectus cumque velit.
+            </p>
+            <a href="#" class="slide_learnbutton">Learn</a>
+          </div>
+          <img src="images/diagram/bdsr.jpg">
+        </div>
+        <div class="slide_info">
+          <div class="slide_content">
+            <h4><a href="#" class="slidemain_topic">Sequential Machine Design</a> >
+              Design of Sequence Recognizer.</h4>
+            <p class="hiddenslide_title slide_paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              velit corporis tempora iste minus beatae ullam, eligendi quam accusantium! Ipsum delectus cumque velit.
+            </p>
+            <a href="#" class="slide_learnbutton">Learn</a>
+          </div>
+          <img src="images/diagram/sequence.png">
+        </div>
+      </div> 
+
+    </div>
+
+   
+
+  </div>
+  <h2 id="topics" style="padding-left:30px;" class="hiddenslide_title">Topics:</h2><br>
+  <div class="whole_content">
+    <div class="flip-container">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/diagram/DigitalElectronics.jpg" class="image" />
+            <p class="topic_paragraph">Digital Electronic Basics</p>
+          </div>
+          <div class="flip-card-back">
+
+            <ol class="hiddeninfo">
+              <li>Learn about Digital and Analog signals</li>
+              <li>Some Basic Electronics</li>
+              <li>Logic functions</li>
+            </ol>
+            <a href="mash.html"><button class="hiddenbutton">Enroll</button></a>
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/diagram/Numersystem.gif" class="image" />
+            <p class="topic_paragraph">Number Systems, Operations and Codes</p>
+          </div>
+          <div class="flip-card-back">
+            <ol class="hiddeninfo">
+              <li>Learn about Digital and Analog signals</li>
+              <li>Some Basic Electronics</li>
+              <li>Logic functions</li>
+            </ol>
+            <a href="mash.html"><button class="hiddenbutton">Enroll</button></a>
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/diagram/kmap.jpg" class="image" />
+            <p class="topic_paragraph">Digital Design Fundamentals</p>
+          </div>
+          <div class="flip-card-back">
+            <ol class="hiddeninfo">
+              <li>Learn about Digital and Analog signals</li>
+              <li>Some Basic Electronics</li>
+              <li>Logic functions</li>
+            </ol>
+            <a href="mash.html"><button class="hiddenbutton">Enroll</button></a>
+          </div>
+        </div>
+      </div>
+
+
+      <!--  -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/diagram/IC.jpg" class="image" />
+            <p class="topic_paragraph">Integrated Circuit Technologies</p>
+          </div>
+          <div class="flip-card-back">
+            <ol class="hiddeninfo">
+              <li>Learn about Digital and Analog signals</li>
+              <li>Some Basic Electronics</li>
+              <li>Logic functions</li>
+            </ol>
+            <a href="mash.html"><button class="hiddenbutton">Enroll</button></a>
+          </div>
+        </div>
+      </div>
+
+
+      <!--  -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/diagram/combinational.jpg" class="image" />
+            <p class="topic_paragraph">Combinational Circuits</p>
+          </div>
+          <div class="flip-card-back">
+            <ol class="hiddeninfo">
+              <li>Learn about Digital and Analog signals</li>
+              <li>Some Basic Electronics</li>
+              <li>Logic functions</li>
+            </ol>
+            <a href="mash.html"><button class="hiddenbutton">Enroll</button></a>
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/diagram/flipflop.png" class="image" />
+            <p class="topic_paragraph">Latches and Flip-Flops</p>
+          </div>
+          <div class="flip-card-back">
+            <ol class="hiddeninfo">
+              <li>Learn about Digital and Analog signals</li>
+              <li>Some Basic Electronics</li>
+              <li>Logic functions</li>
+            </ol>
+            <a href="mash.html"><button class="hiddenbutton">Enroll</button></a>
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/diagram/counter.gif" class="image" />
+            <p class="topic_paragraph">Counters</p>
+          </div>
+          <div class="flip-card-back">
+            <ol class="hiddeninfo">
+              <li>Learn about Digital and Analog signals</li>
+              <li>Some Basic Electronics</li>
+              <li>Logic functions</li>
+            </ol>
+            <a href="mash.html"><button class="hiddenbutton">Enroll</button></a>
+          </div>
+        </div>
+      </div>
+
+
+      <!--  -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/diagram/Shift-Registers.png" class="image" />
+            <p class="topic_paragraph">Shift Regsters</p>
+          </div>
+          <div class="flip-card-back">
+            <ol class="hiddeninfo">
+              <li>Learn about Digital and Analog signals</li>
+              <li>Some Basic Electronics</li>
+              <li>Logic functions</li>
+            </ol>
+            <a href="mash.html"><button class="hiddenbutton">Enroll</button></a>
+          </div>
+        </div>
+      </div>
+
+
+      <!--  -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/diagram/sequence.png" class="image" />
+            <p class="topic_paragraph">Sequential Machine Design</p>
+          </div>
+          <div class="flip-card-back">
+            <ol class="hiddeninfo">
+              <li>Learn about Digital and Analog signals</li>
+              <li>Some Basic Electronics</li>
+              <li>Logic functions</li>
+            </ol>
+            <a href="mash.html"><button class="hiddenbutton">Enroll</button></a>
+          </div>
+        </div>
+      </div>
+
+
+      <!--  -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/diagram/memories.jpg" class="image" />
+            <p class="topic_paragraph">Memories</p>
+          </div>
+          <div class="flip-card-back">
+            <ol class="hiddeninfo">
+              <li>Learn about Digital and Analog signals</li>
+              <li>Some Basic Electronics</li>
+              <li>Logic functions</li>
+            </ol>
+            <a href="mash.html"><button class="hiddenbutton">Enroll</button></a>
+          </div>
+        </div>
+      </div>
+
+
+      <!--  -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/diagram/pla.png" class="image" />
+            <p class="topic_paragraph">Programmable Logic Devices</p>
+          </div>
+          <div class="flip-card-back">
+            <ol class="hiddeninfo">
+              <li>Learn about Digital and Analog signals</li>
+              <li>Some Basic Electronics</li>
+              <li>Logic functions</li>
+            </ol>
+            <a href="mash.html"><button class="hiddenbutton">Enroll</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Number Animation -->
+
+    <div class="animated">
+      <div class="animatedbox inside--animation">1</div>
+      <div class="animatedbox inside--animation">0</div>
+      <div class="animatedbox inside--animation">0</div>
+      <div class="animatedbox inside--animation">1</div>
+      <div class="animatedbox inside--animation">0</div>
+      <div class="animatedbox inside--animation">1</div>
+      <div class="animatedbox inside--animation">0</div>
+      <div class="animatedbox inside--animation">1</div>
+      <div class="animatedbox inside--animation">0</div>
+      <div class="animatedbox inside--animation">0</div>
+      <div class="animatedbox inside--animation">1</div>
+      <div class="animatedbox inside--animation">1</div>
+      <div class="animatedbox inside--animation">1</div>
+      <div class="animatedbox inside--animation">0</div>
+      <div class="animatedbox inside--animation">0</div>
+      <div class="animatedbox inside--animation">1</div>
+      <div class="animatedbox inside--animation">0</div>
+      <div class="animatedbox inside--animation">1</div>
+      <div class="animatedbox inside--animation">1</div>
+
+    </div>
+
+    <!-- Blog Post -->
+
+    <div class="blog">
+      <div class="blog__heading">
+        <h2>Latest Blogs:</h2>
+      </div>
+
+      <div class="roll_in_right">
+        <img src="images/diagram/memories.jpg" alt="">
+        <div class="blog_info">
+          <h2>How are memories made?</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi illo sit ratione aut pariatur repellendus voluptatibus natus ea voluptatum dolorum ullam culpa nulla suscipit, assumenda est, id, quod quas. Repellendus!</p>
+        </div>
+        <div class="read_more">
+            <p>Read more</p>
+        </div>
+
+        
+      </div>
+      <div class="roll_in_right">
+        <img src="images/diagram/mk.jpg" alt="">
+        <div class="blog_info">
+          <h2>Who is Maurice Karnaugh?</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi illo sit ratione aut pariatur repellendus voluptatibus natus ea voluptatum dolorum ullam culpa nulla suscipit, assumenda est, id, quod quas. Repellendus!</p>
+        </div>
+        <div class="read_more">
+            <p>Read more</p>
+        </div>
+        
+      </div>
+      <div class="roll_in_right">
+        <img src="images/diagram/IC.jpg" alt="">
+        <div class="blog_info">
+          <h2>What is inside an Integrated Circuit?</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi illo sit ratione aut pariatur repellendus voluptatibus natus ea voluptatum dolorum ullam culpa nulla suscipit, assumenda est, id, quod quas. Repellendus!</p>
+        </div>
+        <div class="read_more">
+            <p>Read more</p>
+        </div>
+      </div>
+      <div class="roll_in_right">
+        <img src="images/diagram/digitalera.jpg" alt="">
+        <div class="blog_info">
+          <h2>The rise of Digital era.</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi illo sit ratione aut pariatur repellendus voluptatibus natus ea voluptatum dolorum ullam culpa nulla suscipit, assumenda est, id, quod quas. Repellendus!</p>
+        </div>
+        <div class="read_more">
+            <p>Read more</p>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+
+
+<!-- Alert Box -->
+
+<div class="customeanimationerr" id="alertmsgerr"></div>
+<div class="customeanimationsuc" id="alertmsgsuc"></div>
+
+
+  <!-- Scroll Button  -->
+  <button id="gototop" onclick="scrollnow()">
+    <img src="images/icons/angle-up-solid.svg" alt="nopic" id="gototop_img">
+  </button>
+</body>
+<script src="assets/index.js"></script>
+<script src="assets/main.js"></script>
+
+</html>
